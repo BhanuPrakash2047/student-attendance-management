@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        background-color: #2874f0; /* Flipkart Blue */
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    .container {
+        max-width: 400px;
+        width: 90%;
+        padding: 40px 30px;
+        background-color: #ffffff; /* White */
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 5s ease, slideIn 7s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-100px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h1 {
+        text-align: center;
+        color: #3b6bfc; /* Light blue */
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        animation: colorChange 10s infinite alternate, shake 5s infinite;
+        transition: color 0.2s ease;
+    }
+
+    @keyframes colorChange {
+        from {
+            color: #3b6bfc; /* Light blue */
+        }
+        to {
+            color: #6aed49; /* Green */
+        }
+    }
+
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        50% { transform: translateX(5px); }
+        75% { transform: translateX(-5px); }
+        100% { transform: translateX(0); }
+    }
+
+    h1:hover {
+        color: #e23744; /* Zomato Red */
+        animation: none;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333333; /* Dark gray */
+        margin-bottom: 20px;
+        animation: slideInText 7s ease;
+    }
+
+    @keyframes slideInText {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        animation: slideInText 7s ease;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333333; /* Dark gray */
+        font-weight: bold;
+        animation: slideInText 7s ease;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 97%;
+        padding: 15px;
+        border: 2px solid #03ffdd; /* Light gray */
+        border-radius: 8px;
+        transition: border-color 0.2s ease;
+        animation: slideInInput 7s ease;
+    }
+
+    @keyframes slideInInput {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: #6aed49; /* Green */
+    }
+
+    .btn {
+        background-color: #e23744; /* Zomato Red */
+        color: #ffffff; /* White */
+        border: none;
+        padding: 15px 0;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        animation: slideInButton 0.7s ease;
+    }
+
+    @keyframes slideInButton {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .btn:hover {
+        background-color: #c9212f; /* Darker Zomato Red */
+        transform: scale(1.1);
+        animation: none;
+    }
+
+    .forgot-password {
+        text-align: right;
+        margin-top: 10px;
+        color: #888888; /* Gray */
+        font-size: 14px;
+        text-decoration: underline;
+        animation: slideInText 7s ease;
+    }
+
+    .register-link {
+        text-align: center;
+        margin-top: 20px;
+        color: #333333; /* Dark gray */
+        font-size: 16px;
+        animation: slideInText 7s ease;
+    }
+
+    .register-link a {
+        color: #2874f0; /* Flipkart Blue */
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .register-link a:hover {
+        text-decoration: underline;
+    }
+
+</style>
+</head>
+<body>
+	<!-- Include this JavaScript code in your login.html file -->
+	<script>
+	    // Check if the 'error' parameter is present in the URL
+	    const urlParams = new URLSearchParams(window.location.search);
+	    const error = urlParams.get('error');
+	
+	    // If 'error' parameter is present, display error message
+	    if (error === 'true') {
+	        alert("Invalid username or password. Please try again.");
+	    }
+	</script>
+
+    <div class="container">
+        <h1>Login to Your Account</h1>
+        <form id="login" class="login-form" method="post">
+            <h2>Welcome Back!</h2>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div class="forgot-password"><a href="#">Forgot password?</a></div>
+            <div class="register-link">Don't have an account? <a href="/register">Register</a></div>
+        </form>
+    </div>
+</body>
+</html>

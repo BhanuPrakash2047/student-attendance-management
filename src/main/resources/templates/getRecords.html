@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #1f3c88, #1c1c1c);
+            color: #ffffff;
+        }
+
+        .table-container {
+            width: 80%;
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            color: #1f3c88;
+        }
+
+        .table-container:hover {
+            transform: scale(1.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            border: 1px solid #1f3c88;
+            text-align: left;
+        }
+
+        th {
+            background: #1f3c88;
+            color: #ffffff;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        th:hover {
+            background: #162c5d;
+            color: #ffffff;
+        }
+
+        tr:nth-child(even) {
+            background: #f0f0f0;
+        }
+
+        tr:nth-child(odd) {
+            background: #ffffff;
+        }
+
+        tr:hover {
+            background: #e0e0e0;
+        }
+
+        td {
+            color: #1f3c88;
+        }
+
+        .table-header {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <div class="table-header">Student Attendance</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Attendance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="student : ${ob}">
+                    <td th:text="${student.username}">Student Name</td>
+                    <td th:text="${student.attendance}">Attendance</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

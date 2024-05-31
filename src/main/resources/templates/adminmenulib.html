@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Menu</title>
+	<link rel="stylesheet" href="feedback.css">
+	<link rel="stylesheet" href="Section1.css">
+    <style>
+    *{
+        padding:0px;
+        margin:0px;
+        box-sizing: border-box;
+    
+    }
+    body{
+        width: 100%;
+        min-height: 100vh;
+       position: relative;
+    }
+    .fa-fa-bars{
+        background-color: #25274D;
+        color: whitesmoke;
+        font-size: large;
+        margin-left: 4px;
+    }
+    header{
+        top:0;
+        left:0;
+        width:100%;
+    
+    }
+    section{
+        width: 100%;
+        display:flex;
+        flex-flow: row wrap;
+        flex-grow: 1;
+        background-color: #25274D;
+        justify-content: space-between;
+        align-items: center;
+        padding:0.2rem;
+        box-shadow: 0px 10px 15px black;
+        position: fixed;
+        
+        
+    }
+    section ul{
+        display:flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        align-items: center;
+        column-gap: 0.8em;
+        
+    }
+    section  a{
+        text-decoration: none;
+        color:whitesmoke;
+        padding:0.3rem;
+        transition: all 1s ease;
+        display: block;
+    }
+    section ul a:hover{
+         background-color:#4169E1;
+         color:#25274D;
+         box-shadow: 0px 0px 15px black;
+         border-radius: 5px;
+         transform: scaleX(1.1);
+    
+    }
+    
+    main {
+        left:0;
+        height: 100%;
+		width:auto;
+        position:static;
+        margin-top: auto;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: start;
+		
+        column-gap: 2em;
+        
+    }
+    main div:first-child{
+        
+        flex-basis: 300px;
+    }
+    
+    
+    main ul{
+        display:flex;
+        flex-flow: column;
+		
+        justify-content: start;
+        align-items: center;
+        background-color:#25274D;
+        margin-bottom: auto;
+        flex-grow: 1;
+        height:200vh;
+       margin-top: 2em;
+	  flex-wrap: nowrap;
+        box-shadow: 10px 0px 20px black;
+      
+    }
+    main .paragraphs{
+        margin-top: 4em;
+    
+    }
+    main ul li{
+        width: 100%;
+        border-bottom: 1px solid white;
+    }
+    main ul li:first-child{
+        padding-top: 1em;
+      /*  */
+    }
+    main ul a{
+        color: whitesmoke;
+        display: block;
+        padding:0.3rem;
+        margin:  0.3em;
+        text-decoration: none;
+        font-size:small;
+        text-align: center;
+        transition: all 1s ease;
+    }
+    
+    main ul a:hover{
+        background-color: #4169E1;
+        color: #25274D;
+    }
+    
+    footer{
+        bottom:0;
+       
+        width:100%;
+        left:0;
+        right:0;
+        background-color: #333333;
+        color:white;
+        display: inline-block;
+        padding: 0.4em;
+    }
+    .icons i {
+        display: inline-block;
+        padding: 4px;
+        font-size:xx-large;
+      }
+      .fa-facebook:hover {
+        color: rgb(0, 110, 255);
+      }
+      .fa-twitter:hover {
+        color: rgb(86, 154, 243);
+      }
+      .fa-instagram:hover {
+        color: rgb(255, 0, 191);
+      }
+      .fa-github:hover {
+        color: rgb(255, 123, 0);
+      }
+	  .formatcontactus h3{
+		width:100%;
+		
+		text-align: center;
+		background-color: grey;
+		border:none;
+		border-radius: 10px;
+		padding:10px 0px;
+		
+		
+	  }
+	  .formatcontactus hr{
+		margin:10px 0px;
+		
+	  }
+    
+    
+    
+</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <header>
+        <section>
+            <div class="fa-fa-bars"><i class="fa fa-bars"></i></div>
+            <div class="title"><h3><a href="#">Student Attendance Management</a></h3></div>
+            <div><ul type="none" >
+            <li><h6><a href="#">Profile</a></h6></li>
+            <li><h6><a href="#">Logout</a></h6></li>
+            </ul></div>
+        </section>
+    </header>
+    <main>
+        <div>
+        <ul type="none">
+            <li><a href=#>View Section Records</a></li>
+            <li><a href=#>Low Attendance Candidates</a></li>
+			<li><a href=#>Detailed Records</a></li>
+            <li><a href=#>Take Attendance</a></li>
+			<li><a href=#>Add Student</a></li>
+			<li><a href="/addsection" id="section1">Add Section</a></li>
+            <li><a href="" id="">Notifications</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/feedback" id="feedback">Feedback</a></li>
+            <li><a href="" id="contactus">Contact Us</a></li>
+            <li><a href="/logout">Logout</a>
+            </li>
+            
+        </ul>
+        </div>
+        <div class="paragraphs" id="para">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto quidem quasi dicta accusantium sint. Aut modi quod expedita adipisci cupiditate saepe molestiae! Quibusdam nobis vitae, amet eos repellat deserunt consequuntur!</p>
+           
+			<p>Earum similique ad iste sit, accusantium nostrum iure perferendis fuga? Illo repellendus doloremque asperiores. Alias nesciunt et blanditiis quia nam porro corporis quo, voluptates, nihil ratione ipsa quis, laborum sunt.</p>
+			           <p>A quas provident, incidunt molestiae eaque ipsam itaque, in soluta praesentium possimus ea vitae. Autem quaerat laudantium nemo earum animi. Officia dolore, nisi maiores recusandae adipisci ex architecto! At, sint?</p>
+			           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet deserunt voluptatem pariatur recusandae cum, eligendi saepe, numquam porro consequuntur facere esse. Labore voluptatem aliquid optio suscipit culpa omnis doloremque! Debitis?</p>
+			           <p>Quidem ducimus incidunt eum, vero vitae inventore. Perferendis deserunt, iure omnis libero tempore voluptate odit sint ut mollitia vero, qui impedit fugiat natus voluptas id cumque saepe in? Vero, eaque.</p>
+			           <p>Sit consectetur voluptas quia alias? Ipsam cumque quae facere aliquid neque ab modi dolore blanditiis maiores hic nobis quidem, odio ducimus! Molestiae soluta beatae esse hic quisquam nostrum, sit neque.</p>
+			           <p>Debitis ab animi molestias quas corporis autem quis consequatur placeat, deleniti fugiat non et hic in esse atque, itaque sequi culpa adipisci optio! Voluptatibus sapiente dolorum fuga doloremque alias libero.</p>
+			           <p>Eligendi, molestias! Exercitationem obcaecati amet totam pariatur incidunt. Neque corporis omnis nulla error accusamus aliquam qui mollitia, amet ipsum aspernatur laudantium cupiditate facere perspiciatis labore expedita ullam tempora quia quae.</p>
+			           <p>Corrupti ratione ipsa quia praesentium, repudiandae iusto enim facere amet dignissimos deleniti molestiae inventore dolorum alias nemo eos nostrum veritatis illum minima non reiciendis saepe. Ut repudiandae odit totam et.</p>
+			           <p>Qui enim similique et provident obcaecati dolorem quibusdam, quaerat iste ipsa magnam. Deleniti doloremque optio porro ex consequuntur et obcaecati id quo, debitis omnis earum sequi sed minus natus cupiditate!</p>
+			           <p>Cupiditate odio eos officia, odit earum ipsa eius suscipit vel minus provident exercitationem veniam eligendi porro at quas? Facere eos alias nesciunt. Aperiam, saepe? Voluptas minima dolores neque dolorum culpa.</p>
+			           <p>Inventore saepe reprehenderit corrupti a minus corporis dolor veniam accusamus eius quae numquam dolorem ullam, atque, eaque magnam. Sapiente tenetur cupiditate dolorum consequatur sit eaque fugit commodi iste veniam sequi.</p>
+			           <p>Doloribus laudantium ratione fuga aliquid harum laboriosam saepe at totam, porro quos perspiciatis, deleniti ea dolorem explicabo dicta voluptatibus consequuntur doloremque exercitationem vero aperiam earum repudiandae? Placeat earum quo velit?</p>
+			           <p>Ab ipsam inventore ullam nulla, sint odit distinctio corrupti? Magni obcaecati cumque aut quaerat esse alias fuga? Perferendis ullam ex quisquam et corrupti. Ipsam praesentium impedit dicta est cum ratione.</p>
+			           <p>Dignissimos dolore autem alias in saepe culpa, ab magni doloremque nobis quos, officia quia porro pariatur quibusdam aut ratione quis corporis debitis ut cum neque dolorum sit velit. Perferendis, ipsa!</p>
+			           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque tempore hic ipsam quisquam saepe accusantium commodi incidunt recusandae dicta reiciendis magnam molestias, dolorem inventore nesciunt debitis? Repellat fugit autem repudiandae.</p>
+			           <p>Vel fuga eaque officiis architecto reprehenderit nisi corrupti sequi quia? Placeat dolorem hic possimus, iure repudiandae est totam at repellat provident eius enim porro mollitia consectetur nihil sint dolorum aut!</p>
+			           <p>Doloribus hic dolorum eaque explicabo iure aliquam voluptates iusto quidem id laudantium. In quas vitae fuga labore, tenetur provident corporis fugit odit. Cum aspernatur fugiat atque ipsum perferendis maiores minima?</p>
+			            <p>Earum similique ad iste sit, accusantium nostrum iure perferendis fuga? Illo repellendus doloremque asperiores. Alias nesciunt et blanditiis quia nam porro corporis quo, voluptates, nihil ratione ipsa quis, laborum sunt.</p>
+            <p>A quas provident, incidunt molestiae eaque ipsam itaque, in soluta praesentium possimus ea vitae. Autem quaerat laudantium nemo earum animi. Officia dolore, nisi maiores recusandae adipisci ex architecto! At, sint?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet deserunt voluptatem pariatur recusandae cum, eligendi saepe, numquam porro consequuntur facere esse. Labore voluptatem aliquid optio suscipit culpa omnis doloremque! Debitis?</p>
+            <p>Quidem ducimus incidunt eum, vero vitae inventore. Perferendis deserunt, iure omnis libero tempore voluptate odit sint ut mollitia vero, qui impedit fugiat natus voluptas id cumque saepe in? Vero, eaque.</p>
+            <p>Sit consectetur voluptas quia alias? Ipsam cumque quae facere aliquid neque ab modi dolore blanditiis maiores hic nobis quidem, odio ducimus! Molestiae soluta beatae esse hic quisquam nostrum, sit neque.</p>
+            <p>Debitis ab animi molestias quas corporis autem quis consequatur placeat, deleniti fugiat non et hic in esse atque, itaque sequi culpa adipisci optio! Voluptatibus sapiente dolorum fuga doloremque alias libero.</p>
+            <p>Eligendi, molestias! Exercitationem obcaecati amet totam pariatur incidunt. Neque corporis omnis nulla error accusamus aliquam qui mollitia, amet ipsum aspernatur laudantium cupiditate facere perspiciatis labore expedita ullam tempora quia quae.</p>
+            <p>Corrupti ratione ipsa quia praesentium, repudiandae iusto enim facere amet dignissimos deleniti molestiae inventore dolorum alias nemo eos nostrum veritatis illum minima non reiciendis saepe. Ut repudiandae odit totam et.</p>
+            <p>Qui enim similique et provident obcaecati dolorem quibusdam, quaerat iste ipsa magnam. Deleniti doloremque optio porro ex consequuntur et obcaecati id quo, debitis omnis earum sequi sed minus natus cupiditate!</p>
+            <p>Cupiditate odio eos officia, odit earum ipsa eius suscipit vel minus provident exercitationem veniam eligendi porro at quas? Facere eos alias nesciunt. Aperiam, saepe? Voluptas minima dolores neque dolorum culpa.</p>
+            <p>Inventore saepe reprehenderit corrupti a minus corporis dolor veniam accusamus eius quae numquam dolorem ullam, atque, eaque magnam. Sapiente tenetur cupiditate dolorum consequatur sit eaque fugit commodi iste veniam sequi.</p>
+            <p>Doloribus laudantium ratione fuga aliquid harum laboriosam saepe at totam, porro quos perspiciatis, deleniti ea dolorem explicabo dicta voluptatibus consequuntur doloremque exercitationem vero aperiam earum repudiandae? Placeat earum quo velit?</p>
+            <p>Ab ipsam inventore ullam nulla, sint odit distinctio corrupti? Magni obcaecati cumque aut quaerat esse alias fuga? Perferendis ullam ex quisquam et corrupti. Ipsam praesentium impedit dicta est cum ratione.</p>
+            <p>Dignissimos dolore autem alias in saepe culpa, ab magni doloremque nobis quos, officia quia porro pariatur quibusdam aut ratione quis corporis debitis ut cum neque dolorum sit velit. Perferendis, ipsa!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque tempore hic ipsam quisquam saepe accusantium commodi incidunt recusandae dicta reiciendis magnam molestias, dolorem inventore nesciunt debitis? Repellat fugit autem repudiandae.</p>
+            <p>Vel fuga eaque officiis architecto reprehenderit nisi corrupti sequi quia? Placeat dolorem hic possimus, iure repudiandae est totam at repellat provident eius enim porro mollitia consectetur nihil sint dolorum aut!</p>
+            <p>Doloribus hic dolorum eaque explicabo iure aliquam voluptates iusto quidem id laudantium. In quas vitae fuga labore, tenetur provident corporis fugit odit. Cum aspernatur fugiat atque ipsum perferendis maiores minima?</p>
+            <p>Similique quos odit sed esse amet ab laboriosam temporibus nihil, sunt obcaecati dolorum explicabo nam nulla atque. Delectus, minima error, dolor officia eius ad hic quisquam at vel necessitatibus praesentium.</p>
+            <p>Fuga est, nesciunt facere fugit accusamus libero ducimus corrupti animi tenetur totam molestias adipisci ab at distinctio delectus sunt sequi. Nostrum, molestiae dolorem quae illum modi minima quia maxime ut.</p>
+        </div>
+    </main>
+    <footer>
+       <h4>@Developed By Bhanu Prakash</h4>
+       <span class="icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-github"></i>
+    </span>
+    </footer>
+	
+	
+	
+	
+	
+	
+	
+	
+	<script>
+	   
+	        document.getElementById('contactus').addEventListener('click', function(event) {
+	            event.preventDefault(); // Prevent default link behavior
+	            var content = document.getElementById('para');
+	            content.innerHTML = 				`
+				                    <div class="formatcontactus">
+				                        <h3 >Contact Us Information:</h3>
+										<hr>
+										<hr>
+										<p>Corrupti ratione ipsa quia praesentium, repudiandae iusto enim facere amet dignissimos deleniti molestiae inventore dolorum alias nemo eos nostrum veritatis illum minima non reiciendis saepe. Ut repudiandae odit totam et.</p>
+									   <p>Qui enim similique et provident obcaecati dolorem quibusdam, quaerat iste ipsa magnam. Deleniti doloremque optio porro ex consequuntur et obcaecati id quo, debitis omnis earum sequi sed minus natus cupiditate!</p>
+										<hr>
+										<hr>	           
+				                        <ol>
+				                            <li><strong>Name:</strong> Kiran</li>
+				                            <li><strong>Email:</strong> johndoe@example.com</li>
+				                            <li><strong>Phone:</strong> +1 (123) 456-7890</li>
+				                        </ol>
+										<hr>
+										<ol>
+										    <li><strong>Name:</strong> Rajesh</li>
+										    <li><strong>Email:</strong> johndoe@example.com</li>
+										    <li><strong>Phone:</strong> +1 (123) 456-7890</li>
+										</ol>
+										<hr>
+										<ol>
+										    <li><strong>Name:</strong> Bhanu Prakash</li>
+										    <li><strong>Email:</strong> johndoe@example.com</li>
+										    <li><strong>Phone:</strong> +1 (123) 456-7890</li>
+										</ol>
+										
+				                    </div>
+				                `;
+	        });
+			document.getElementById('feedback').addEventListener('click', function(event) {
+				            event.preventDefault(); // Prevent default link behavior
+				            var content = document.getElementById('para');
+				            content.innerHTML = `
+							<div class="feedback-container">
+							    <div class="feedback-header">
+							        <h1>Feedback Form</h1>
+							        <p>We value your feedback!</p>
+							    </div>
+							    <form class="feedback-form" action="/feedback" method="GET">
+							        <div class="form-group">
+							            <textarea name="feedback" id="feedback" placeholder="Enter your feedback here..." required></textarea>
+							        </div>
+							        <button type="submit" class="submit-btn" id="submitevent">Submit Feedback</button>
+							    </form>
+							    <div class="feedback-info">
+							        <p>Use this form to provide us with your feedback. Your opinions help us improve our services.</p>
+							    </div>
+							</div>
+							`;
+							                    
+				        });
+			document.getElementById('submitevent').addEventListener('click',function(event){
+				event.preventDefault();
+				   var formData = new FormData(document.querySelector('.feedback-form'));
+				   alert('Feedback Submitted Successfully');
+				            // Example: Send formData to your backend via fetch or XMLHttpRequest
+				            fetch('/feedback', {
+				                method: 'GET',
+				                body: formData
+				            })
+				            .then(response => {
+				                if (response.ok) {
+				                    alert('Feedback Submitted Successfully');
+				                } else {
+				                    alert('Submission failed. Please try again.');
+				                }
+				            })
+				            .catch(error => {
+				                console.error('Error:', error);
+				                alert('Submission failed. Please try again.');
+				            });
+				        });
+						
+			document.getElementById('section1').addEventListener('click',function(event){
+				event.preventDefault();
+				var content = document.getElementById('para');
+				content.innerHTML =`
+				<div class="form-container">
+				    <div class="form-header">
+				        <h1>Feedback Form</h1>
+				        <p>We value your feedback!</p>
+				    </div>
+				    <form class="form" action="/addsection" method="GET">
+				        <div class="form-group">
+				            <label for="feedback" class="form-label">Enter New Section:</label>
+				            <textarea id="feedback" name="section" class="form-input" placeholder="Enter The New Section" required></textarea>
+				        </div>
+				        <input type="submit" class="submit-btn">
+				    </form>
+				    <div class="feedback-info">
+				        <p>Use this form to provide us with your Contributions. Your Contibutions help us improve our services.</p>
+				    </div>
+				</div>
+				
+				`;
+			});
+						
+			
+	   
+	</script>
+	
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5; /* Light grayish blue */
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #2874f0; /* Flipkart Blue */
+            color: #ffffff; /* White text */
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
+            animation: fadeIn 1s ease;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+		.menu-bar {
+				       background-color: #e23744; /* Zomato Red */
+				       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+				       border-radius: 10px;
+				       margin-top: 40px; /* Increased margin-top */
+				       padding: 20px 20px; /* Increased padding */
+				       overflow: hidden;
+				       display: flex;
+				       justify-content: space-between;
+				       align-items: center;
+				       animation: fadeIn 1s ease;
+				       height: 100px; /* Increased height */
+				   }
+
+        .menu-bar .search-books {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-bar .search-books .search-bar {
+            position: relative;
+            border: none;
+            overflow: hidden;
+            background-color: transparent;
+            transition: width 0.3s ease;
+            width: 30px;
+            cursor: pointer;
+        }
+
+        .menu-bar .search-books .search-bar:hover {
+            width: 300px; /* Expand width on hover */
+        }
+
+        .menu-bar .search-books .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+            background-color: #ffffff; /* White */
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-bar .search-books .search-bar input[type="text"]:focus {
+            background-color: #fff3f4; /* Light red */
+        }
+
+        .menu-bar .search-books .search-bar button {
+            border: none;
+            background-color: transparent;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-bar .search-books .nav-bar {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 200px;
+            background-color: #ffffff; /* White */
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            display: none;
+            animation: fadeIn 1s ease;
+        }
+
+        .menu-bar .search-books:hover .nav-bar {
+            display: block;
+        }
+
+        .menu-bar .search-books .nav-bar ul {
+            padding: 10px;
+            margin: 0;
+            list-style: none;
+        }
+
+        .menu-bar .search-books .nav-bar li {
+            padding: 5px 0;
+        }
+
+        .menu-bar .search-books .nav-bar a {
+            color: #333333; /* Dark gray text */
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .menu-bar .search-books .nav-bar a:hover {
+            color: #6aed49; /* Green */
+        }
+
+		.menu-bar .logout {
+			           color: #ffffff; /* White text */
+			           font-size: 18px;
+			           font-weight: bold;
+			           text-decoration: none;
+			           transition: color 0.3s ease;
+			           margin-left: auto; /* Pushes the logout button to the right */
+			       }
+				   .data-to-print {
+				   		          /* Additional styling for the div containing data */
+				   		          color: #ffffff; /* Example text color */
+				   		          font-size: 18px; /* Example font size */
+				   		          text-align: center; /* Center align the text */
+				   		      }
+
+        .menu-bar .logout:hover {
+            color: #f0f2f5; /* Light grayish blue */
+        }
+
+        .menu {
+            background-color: #ffffff; /* White */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            animation: fadeIn 1s ease;
+        }
+
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 10px 0;
+            animation: fadeIn 1s ease;
+        }
+
+        .menu li a {
+            color: #333333; /* Dark gray text */
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .menu li a:hover {
+            color: #6aed49; /* Green */
+        }
+
+        .scrolling-info {
+            background-color: #e23744; /* Zomato Red */
+            color: #ffffff; /* White text */
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 2s ease;
+        }
+
+        .scrolling-info marquee {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Library Management System</h1>
+        </div>
+
+        <div class="menu-bar">
+			<div class="menu-bar">
+					<form action="/user/searchbyname" method="get">
+								    <input type="text" name="text" placeholder="Search by Title" required>
+								    <button type="submit">Search</button>
+								</form>
+			        
+			     </div>
+            <a href="/logout" class="logout">Logout</a>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="/user/updateAdmin">Update Details</a></li>
+                <li><a href="/user/feedback">Give Feedback</a></li>
+                <li><a href="#">Request Book</a></li>
+                <li><a href="/user/records">View Records</a></li>
+                <li><a href="/user/returnbooks">Return Books</a></li>
+				<li><a href="/user/borrowbook">Borrow Books</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="scrolling-info">
+        <marquee behavior="scroll" direction="left" scrollamount="10">
+            Welcome to the Library Management System. Explore our features and services.
+        </marquee>
+    </div>
+</body>
+</html>

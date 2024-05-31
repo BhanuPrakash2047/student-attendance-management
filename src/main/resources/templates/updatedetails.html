@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${username}">Update Details For </title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: navy;
+            margin: 0;
+            padding: 0;
+        }
+        .container1 {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease;
+        }
+        .container1 h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 30px;
+        }
+        .form1 {
+            text-align: center;
+        }
+        .container1 label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #555555;
+        }
+        .container1 [type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        .container1 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+            border-color: #007bff;
+        }
+        .container1 button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .container1 button:hover {
+            background-color: #0056b3;
+        }
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <h1>Update Details</h1>
+        <form class="form1" action="#" method="post" onsubmit="return validateForm()" th:action="@{/updateprofile}" th:object="${userob}">
+            <label for="username">Username:</label>
+            <input type="text" id="username"  th:field="*{username}" placeholder="Enter your username" />
+            <label for="password">Password:</label>
+            <input type="password" id="password" 			th:field="*{password}" placeholder="Enter your password" />
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirmPassword" placeholder="Re-enter your password" />
+            <label for="email">Email:</label>
+            <input type="email" id="email" 			th:field="*{email}" placeholder="Enter your email" />
+			<input type="hidden" th:field="*{id}" />
+			
+            <button type="submit">Update</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
